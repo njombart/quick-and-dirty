@@ -4,7 +4,7 @@ Quick and dirty scripts
 
 ## Fun with kernel, fork and kill
 
-Want to prank a colleague? Let a fake crazy process, rootkit or miner run on a *test* machine!
+Want to prank a colleague? Let a fake crazy [process](swapfun.c), rootkit or miner run on a *test* machine!
 
 Prepare:
 
@@ -62,7 +62,7 @@ MiB Swap:   2108.0 total,   2108.0 free,      0.0 used.   1411.7 avail Mem
 
 This is very old stuff done why learning perl
 
-* `modif.pl`
+* [modif.pl](modif.pl)
 
 This one probably does not work with recent kernels. I had many times before to troubleshoot SIP stacks and to be quick, needed to modify headers on the fly, inside the metwork. This allowed to validate interop issues without changing the code for testing, only when the change was validated.
 
@@ -74,19 +74,19 @@ iptables -t mangle -A OUTPUT --proto udp --destination-port 5060 --jump QUEUE
 
 Run the `modif.pl` script in background. If it's not running, packets will be blocked in the kernel.
 
-* `doublons.pl` finds files with identical content (but you'd better use fdupes)
+* [doublons.pl](doublons.pl) finds files with identical content (but you'd better use fdupes)
 
 ```bash
 find . | ./doublons.pl
 ```
 
-* `portmaintainers.pl` on a FreeBSD system, shows how much ports someone maintains
+* [portmaintainers.pl](portmaintainers.pl) on a FreeBSD system, shows how much ports someone maintains
 
 ```bash
 perl portmaintainers.pl < /usr/ports/INDEX-10 | less
 ```
 
-* `mp3r.pl` renames mp3 files based on their ID3 tags
+* [mp3r.pl](mp3r.pl) renames mp3 files based on their ID3 tags
 
 ```bash
 ./mp3r.pl file1.mp3 file2.mp3 ...
@@ -94,7 +94,7 @@ perl portmaintainers.pl < /usr/ports/INDEX-10 | less
 
 Use `-n` to make a dry run
 
-* dblname.pl finds files with same name and rename them to `_1`, `_2`, etc.
+* [dblname.pl](dblname.pl) finds files with same name and rename them to `_1`, `_2`, etc.
 
 ```bash
 find . | ./dblname.pl
